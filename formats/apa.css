@@ -1,0 +1,71 @@
+html {
+  font-size: 12pt;
+  font-family: Times New Roman;
+  line-height: 2;
+}
+
+p, h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
+div.page-body p {
+  text-indent: 1in;
+}
+
+div.page-title {
+  padding-top: 144px;
+}
+
+div.page-title p {
+  text-align: center;
+}
+
+div.page {
+  page-break-before: always
+}
+
+h1.page-header {
+  font-size: 100%;
+  text-align: center;
+  font-weight: normal;
+}
+
+@page { 
+  @top-left {
+    content: flow(topleft);
+  }
+  @top-right {
+    content: flow(topright);
+  }
+}
+
+div.paper-topleft {
+  flow: static(topleft);
+}
+
+div.paper-topright::after {
+  content: " " counter(page);
+}
+
+div.paper-topright {
+  flow: static(topright);
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+div.page-references p {
+  padding-left: 1in;
+  text-indent: -1in;
+}
+
+h3, h4, h5 {
+  display: inline;
+}
+
+h3::after,
+h4::after,
+h5::after {
+  content: ". ";
+}

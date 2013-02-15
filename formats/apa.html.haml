@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %link{:href => "formats/apa.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "http://code.jquery.com/jquery-1.9.1.min.js", :type => "text/javascript"}
+    %script{:src => "formats/apa.js", :type => "text/javascript"}
+  %body
+    .paper-topleft= paper.running_head
+    .paper-topright= paper.last_name
+    .page.page-title
+      %p= paper.title
+      %p= paper.name
+      %p= paper.school
+      %p= paper.teacher
+      %p= paper.course
+      %p= paper.due_date
+    .paper-topleft= paper.running_head
+    .page.page-abstract
+      %h1.page-header Abstract
+      = paper.abstract
+    .page.page-body
+      %h1.page-header= paper.title
+      :markdown
+        #{paper.body}
+    .page.page-references
+      %h1.page-header References
